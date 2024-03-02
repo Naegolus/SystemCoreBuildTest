@@ -11,6 +11,12 @@ jobs:
       - name: Install meson and ninja
         run: sudo apt install meson ninja-build
       - uses: actions/checkout@v4
-      - name: Initialize submodules
+      - name: Initialize git submodules
         run: git submodule update --init --recursive
+      - name: Setup build directory
+        run: meson setup build-native
+      - name: Build application
+        run: ninja -C build-native
+      - name: Start application
+        run: ./build-native/app
 
