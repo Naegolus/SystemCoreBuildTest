@@ -57,5 +57,5 @@ jobs:
       - name: Build application cmake
         run: cmake --build build-cmake-native/
       - name: Start application cmake
-        run: ./build-cmake-native/app
+        run: ./build-cmake-native/app.exe
 
