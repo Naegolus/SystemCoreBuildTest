@@ -8,7 +8,7 @@
 # apt install g++-arm-linux-gnueabi
 
 project(
-	'Build Test',
+	'NOP - Processing() Build Test',
 	'cpp',
 )
 
