@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install meson and ninja
-        run: sudo apt install meson-build ninja
+        run: sudo apt install meson ninja-build
 
