@@ -1,0 +1,12 @@
+
+name: Build Test
+
+on: push
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install meson and ninja
+        run: apt install meson-build ninja
+
