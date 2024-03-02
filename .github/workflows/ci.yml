@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  build-linux:
+  build-linux-native:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v5
@@ -24,7 +24,7 @@ jobs:
       - name: Start application
         run: ./build-native/app
 
-  build-windows:
+  build-windows-native:
     runs-on: windows-latest
     steps:
       - name: Set up Visual Studio Environment
