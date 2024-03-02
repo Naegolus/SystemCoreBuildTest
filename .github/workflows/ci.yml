@@ -53,9 +53,9 @@ jobs:
       - name: Start application meson
         run: ./build-meson-native/app
       - name: Setup build directory cmake
-        run: cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-native
+        run: cmake -S . -B build-cmake-native
       - name: Build application cmake
-        run: cmake --build build-cmake-native
+        run: cmake --build build-cmake-native --config Release
       - name: Start application cmake
         run: ./build-cmake-native/Release/app.exe
 
