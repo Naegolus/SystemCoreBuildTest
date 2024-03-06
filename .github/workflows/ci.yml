@@ -15,7 +15,9 @@ jobs:
       - name: Update
         run: sudo apt update
       - name: Install build tools cross
-        run: sudo apt install mingw-w64 gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
+        run: sudo apt install mingw-w64 gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+      - name: Setup mingw
+      - run: update-alternatives --config x86_64-w64-mingw32-g++
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'

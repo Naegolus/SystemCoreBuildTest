@@ -9,8 +9,8 @@ update-alternatives --config x86_64-w64-mingw32-g++
 
 Raspberry Pi
 
-apt install gcc-arm-linux-gnueabi
-apt install g++-arm-linux-gnueabi
+apt install gcc-arm-linux-gnueabihf
+apt install g++-arm-linux-gnueabihf
 
 --------------------------------
 Meson
