@@ -23,6 +23,10 @@ add_executable(
 	main/Supervising.cpp
 )
 
+if (MSVC)
+	add_compile_options(/Za)
+endif()
+
 if (WIN32)
 	add_definitions(
 		"-D_WIN32_WINNT=_WIN32_WINNT_WIN10"
