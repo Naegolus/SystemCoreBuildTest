@@ -14,8 +14,9 @@ args += '-DCONFIG_PROC_HAVE_LOG=1'
 args += '-std=gnu++11'
 
 # https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
-warnings = [
+warningsLinux = [
 	'-Wall',
+	'-Wextra',
 	'-Wpedantic',
 	'-Werror',
 	'-Wfatal-errors',
@@ -50,10 +51,8 @@ if host_machine.system() == 'windows'
 	args += '-DWINVER=_WIN32_WINNT_WIN10'
 	deps += cxx.find_library('ws2_32')
 else
-	warnings += '-Wextra'
+	args += warningsLinux
 endif
-
-args += warnings
 
 myApp = executable(
 	'app',
