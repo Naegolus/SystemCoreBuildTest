@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.25.1)
 project("NOP - Processing() Build Test")
 
 include_directories(
+	"./ProcessingCore"
 	"./main"
 )
 
@@ -12,7 +13,14 @@ add_definitions(
 
 add_executable(
 	app
+	ProcessingCore/Processing.cpp
+	ProcessingCore/Log.cpp
+	ProcessingCore/SystemDebugging.cpp
+	ProcessingCore/SystemCommanding.cpp
+	ProcessingCore/TcpListening.cpp
+	ProcessingCore/TcpTransfering.cpp
 	main/main.cpp
+	main/Supervising.cpp
 )
 
 if (WIN32)

@@ -40,7 +40,7 @@ jobs:
       - name: Setup build directory cmake native
         run: cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-native
       - name: Build application cmake native
-        run: cmake --build build-cmake-native
+        run: cmake --build build-cmake-native -j
       - name: Start application cmake
         run: ./build-cmake-native/app
 
@@ -59,12 +59,12 @@ jobs:
       - name: Setup build directory cmake win64
         run: cmake --toolchain tools/cmake-toolchain-win64.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-win64
       - name: Build application cmake win64
-        run: cmake --build build-cmake-win64
+        run: cmake --build build-cmake-win64 -j
 
       - name: Setup build directory cmake rpi
         run: cmake --toolchain tools/cmake-toolchain-rpi.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-rpi
       - name: Build application cmake rpi
-        run: cmake --build build-cmake-rpi
+        run: cmake --build build-cmake-rpi -j
 
   windows-native-build-run:
     runs-on: windows-latest
@@ -99,7 +99,7 @@ jobs:
       - name: Setup build directory cmake
         run: cmake -S . -B build-cmake-native
       - name: Build application cmake
-        run: cmake --build build-cmake-native --config Release
+        run: cmake --build build-cmake-native --config Release -j
       - name: Start application cmake
         run: ./build-cmake-native/Release/app.exe
 

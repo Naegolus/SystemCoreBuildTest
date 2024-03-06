@@ -57,9 +57,17 @@ endif
 myApp = executable(
 	'app',
 	[
+		'ProcessingCore/Processing.cpp',
+		'ProcessingCore/Log.cpp',
+		'ProcessingCore/SystemDebugging.cpp',
+		'ProcessingCore/SystemCommanding.cpp',
+		'ProcessingCore/TcpListening.cpp',
+		'ProcessingCore/TcpTransfering.cpp',
 		'main/main.cpp',
+		'main/Supervising.cpp',
 	],
 	include_directories : include_directories([
+		'./ProcessingCore',
 		'./main',
 	]),
 	dependencies : [
