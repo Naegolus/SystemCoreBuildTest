@@ -24,7 +24,7 @@ jobs:
       - name: Initialize git submodules
         run: git submodule update --init --recursive
 
-# Native meson + CMake
+# Native meson + cmake
 
       - name: Setup build directory meson native
         run: meson setup build-meson-native
@@ -53,12 +53,12 @@ jobs:
         run: ninja -C build-meson-rpi
 
       - name: Setup build directory cmake win64
-        run: cmake --toolchain tools/CMake-toolchain-win64.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-win64
+        run: cmake --toolchain tools/cmake-toolchain-win64.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-win64
       - name: Build application cmake win64
         run: cmake --build build-cmake-win64
 
       - name: Setup build directory cmake rpi
-        run: cmake --toolchain tools/CMake-toolchain-rpi.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-rpi
+        run: cmake --toolchain tools/cmake-toolchain-rpi.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-rpi
       - name: Build application cmake rpi
         run: cmake --build build-cmake-rpi
 
@@ -83,7 +83,7 @@ jobs:
       - name: Initialize git submodules
         run: git submodule update --init --recursive
 
-# Native meson + CMake
+# Native meson + cmake
 
       - name: Setup build directory meson
         run: meson setup build-meson-native
