@@ -1,12 +1,4 @@
 
-# For Windows do:
-# apt install mingw-w64
-# update-alternatives --config x86_64-w64-mingw32-g++
-
-# For Raspberry Pi do:
-# apt install gcc-arm-linux-gnueabi
-# apt install g++-arm-linux-gnueabi
-
 project(
 	'NOP - Processing() Build Test',
 	'cpp',

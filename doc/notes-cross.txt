@@ -1,0 +1,38 @@
+
+--------------------------------
+Cross Toolchain in Linux
+
+Windows
+
+apt install mingw-w64
+update-alternatives --config x86_64-w64-mingw32-g++
+
+Raspberry Pi
+
+apt install gcc-arm-linux-gnueabi
+apt install g++-arm-linux-gnueabi
+
+--------------------------------
+Meson
+
+meson setup build-meson-native
+ninja -C build-meson-native
+
+meson setup --cross-file tools/meson-cross-win64.txt build-meson-win64
+ninja -C build-meson-win64
+
+meson setup --cross-file tools/meson-cross-rpi.txt build-meson-rpi
+ninja -C build-meson-rpi
+
+--------------------------------
+CMake
+
+cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-native
+cmake --build build-cmake-native
+
+cmake --toolchain tools/CMake-toolchain-win64.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-win64
+cmake --build build-cmake-win64
+
+cmake --toolchain tools/CMake-toolchain-rpi.cmake -DCMAKE_BUILD_TYPE=Release -S . -B build-cmake-rpi
+cmake --build build-cmake-rpi
+
