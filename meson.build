@@ -48,6 +48,7 @@ warningsLinux = [
 if host_machine.system() == 'windows'
 	args += '-D_WIN32_WINNT=_WIN32_WINNT_WIN10'
 	args += '-DWINVER=_WIN32_WINNT_WIN10'
+	args += '-Za'
 	deps += cxx.find_library('ws2_32')
 else
 	args += '-std=gnu++11'
