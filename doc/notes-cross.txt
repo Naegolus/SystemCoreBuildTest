@@ -1,4 +1,13 @@
 
+Literature
+- https://learn.microsoft.com/en-us/cpp/build/reference/za-ze-disable-language-extensions?view=msvc-170
+- https://developercommunity.visualstudio.com/t/alternative-keywords-in-c-is-not-supported/781344
+- https://stackoverflow.com/questions/47489894/compiler-says-logical-and-is-undefined-identifier
+- https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options-listed-alphabetically?view=msvc-170
+- https://mesonbuild.com/Reference-manual_returned_compiler.html#compilerget_id
+- https://stackoverflow.com/questions/10046114/in-cmake-how-can-i-test-if-the-compiler-is-clang
+- https://cmake.org/cmake/help/latest/command/add_compile_options.html
+
 --------------------------------
 Cross Toolchain in Linux
 
