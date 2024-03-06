@@ -12,13 +12,15 @@ jobs:
 
 # Toolchain + git
 
+      - name: Update
+        run: sudo apt update
+      - name: Install build tools cross
+        run: sudo apt install mingw-w64 gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - name: Install build tools
         run: python -m pip install meson ninja cmake
-      - name: Install build tools cross
-        run: sudo apt install mingw-w64 gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
 
       - uses: actions/checkout@v4
       - name: Initialize git submodules
