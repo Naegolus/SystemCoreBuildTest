@@ -24,7 +24,7 @@ add_executable(
 )
 
 if (MSVC)
-	set (CMAKE_CXX_FLAGS "/Za")
+	set (CMAKE_CXX_FLAGS "/std:c11")
 endif()
 
 if (WIN32)

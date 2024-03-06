@@ -55,7 +55,7 @@ else
 endif
 
 if cxx.get_id() == 'msvc'
-	args += '-Za'
+	args += '/std:c11'
 endif
 
 myApp = executable(
