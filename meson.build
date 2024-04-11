@@ -51,11 +51,12 @@ if host_machine.system() == 'windows'
 	deps += cxx.find_library('ws2_32')
 else
 	args += '-std=gnu++11'
-	args += warningsLinux
 endif
 
 if cxx.get_id() == 'msvc'
 	args += '/std:c11'
+elif cxx.get_id() == 'gcc'
+	args += warningsLinux
 endif
 
 myApp = executable(
