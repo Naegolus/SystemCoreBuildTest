@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  linux-native-build-run:
+  macos-native-build-run:
     runs-on: macos-13
     steps:
 
