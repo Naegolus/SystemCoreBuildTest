@@ -60,7 +60,6 @@ private:
 	void dbgStart();
 
 	/* member variables */
-	uint32_t mStartMs;
 	uint32_t mCounter;
 
 	/* static functions */

@@ -45,7 +45,6 @@ using namespace std;
 
 Supervising::Supervising()
 	: Processing("Supervising")
-	, mStartMs(0)
 	, mCounter(0)
 {
 	mState = StStart;
