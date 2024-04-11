@@ -2,6 +2,8 @@
 cmake_minimum_required(VERSION 3.25.1)
 project("NOP - Processing() Build Test")
 
+set(CMAKE_CXX_STANDARD 11)
+
 include_directories(
 	"./ProcessingCore"
 	"./main"
@@ -24,7 +26,7 @@ add_executable(
 )
 
 if (MSVC)
-	set (CMAKE_CXX_FLAGS "/std:c11 /EHsc")
+	set (CMAKE_CXX_FLAGS "/EHsc")
 endif()
 
 if (WIN32)
