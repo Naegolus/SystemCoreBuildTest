@@ -7,6 +7,18 @@ Literature
 - https://mesonbuild.com/Reference-manual_returned_compiler.html#compilerget_id
 - https://stackoverflow.com/questions/10046114/in-cmake-how-can-i-test-if-the-compiler-is-clang
 - https://cmake.org/cmake/help/latest/command/add_compile_options.html
+- https://stackoverflow.com/questions/2224334/gcc-dump-preprocessor-defines
+
+--------------------------------
+Compiler defines
+
+echo | gcc -dM -E -
+echo | clang -dM -E -
+
+echo | g++ -dM -E -x c++ -
+echo | clang++ -dM -E -x c++ -
+
+echo | x86_64-w64-mingw32-g++ -dM -E -x c++ -
 
 --------------------------------
 Cross Toolchain in Linux
