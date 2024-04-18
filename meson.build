@@ -6,11 +6,24 @@ project(
 
 cxx = meson.get_compiler('cpp')
 
-deps = []
-deps += dependency('threads')
+# Sources
 
-args = []
-args += '-DCONFIG_PROC_HAVE_LOG=1'
+srcs = [
+	'ProcessingCore/Processing.cpp',
+	'ProcessingCore/Log.cpp',
+	'ProcessingCore/SystemDebugging.cpp',
+	'ProcessingCore/SystemCommanding.cpp',
+	'ProcessingCore/TcpListening.cpp',
+	'ProcessingCore/TcpTransfering.cpp',
+	'main/main.cpp',
+	'main/Supervising.cpp',
+]
+
+# Arguments
+
+args = [
+	'-DCONFIG_PROC_HAVE_LOG=1',
+]
 
 # https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
 warningsLinux = [
@@ -48,7 +61,6 @@ warningsLinux = [
 if host_machine.system() == 'windows'
 	args += '-D_WIN32_WINNT=_WIN32_WINNT_WIN10'
 	args += '-DWINVER=_WIN32_WINNT_WIN10'
-	deps += cxx.find_library('ws2_32')
 else
 	args += '-std=gnu++11'
 endif
@@ -59,17 +71,22 @@ elif cxx.get_id() == 'gcc'
 	args += warningsLinux
 endif
 
+# Dependencies
+
+deps = [
+	dependency('threads'),
+]
+
+if host_machine.system() == 'windows'
+	deps += cxx.find_library('ws2_32')
+endif
+
+# Application
+
 myApp = executable(
 	'app',
 	[
-		'ProcessingCore/Processing.cpp',
-		'ProcessingCore/Log.cpp',
-		'ProcessingCore/SystemDebugging.cpp',
-		'ProcessingCore/SystemCommanding.cpp',
-		'ProcessingCore/TcpListening.cpp',
-		'ProcessingCore/TcpTransfering.cpp',
-		'main/main.cpp',
-		'main/Supervising.cpp',
+		srcs,
 	],
 	include_directories : include_directories([
 		'./ProcessingCore',
