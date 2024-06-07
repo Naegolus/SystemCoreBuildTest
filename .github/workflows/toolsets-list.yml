@@ -1,0 +1,16 @@
+
+name: VS Toolsets List
+
+on:
+  workflow_dispatch
+
+jobs:
+
+  list-toolsets:
+    runs-on: windows-latest
+    steps:
+
+      - name: List available toolsets
+        run: |
+          vswhere.exe -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+
