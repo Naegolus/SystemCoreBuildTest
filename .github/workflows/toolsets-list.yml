@@ -10,7 +10,14 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      - name: List available toolsets
+      - name: Check installed Visual Studio instances
         run: |
-          vswhere.exe -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          echo "Listing all installed Visual Studio instances..."
+          vswhere -all -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath -prerelease
+          
+      - name: Check available toolsets in Visual Studio
+        run: |
+          echo "Listing available toolsets..."
+          dir "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC" || echo "No toolsets found in VS 2019"
+          dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC" || echo "No toolsets found in VS 2022"
 
