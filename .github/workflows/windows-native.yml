@@ -15,7 +15,7 @@ jobs:
       - name: Set up Visual Studio Environment
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          toolset: 14.37
+          toolset: v143
           arch: x64
       - uses: actions/setup-python@v5
         with:
