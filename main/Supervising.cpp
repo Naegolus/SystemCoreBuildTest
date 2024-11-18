@@ -41,8 +41,6 @@ dProcessStateStr(ProcState);
 
 using namespace std;
 
-#define LOG_LVL	0
-
 Supervising::Supervising()
 	: Processing("Supervising")
 	, mCounter(0)
