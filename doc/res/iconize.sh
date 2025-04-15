@@ -12,5 +12,5 @@ convert \
 	res_icon/icon-64.png \
 	res_icon/icon-128.png \
 	res_icon/icon-256.png \
-	app.ico
+	codeorb.ico
 
