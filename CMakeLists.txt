@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.25.1)
-project("NOP - Processing() Build Test")
+project("NOP - Build Test")
 
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(
-	"./ProcessingCore"
+	"./SystemCore"
 	"./main"
 )
 
@@ -15,12 +15,12 @@ add_definitions(
 
 add_executable(
 	app
-	ProcessingCore/Processing.cpp
-	ProcessingCore/Log.cpp
-	ProcessingCore/SystemDebugging.cpp
-	ProcessingCore/SystemCommanding.cpp
-	ProcessingCore/TcpListening.cpp
-	ProcessingCore/TcpTransfering.cpp
+	SystemCore/Processing.cpp
+	SystemCore/Log.cpp
+	SystemCore/SystemDebugging.cpp
+	SystemCore/SystemCommanding.cpp
+	SystemCore/TcpListening.cpp
+	SystemCore/TcpTransfering.cpp
 	main/main.cpp
 	main/Supervising.cpp
 )
