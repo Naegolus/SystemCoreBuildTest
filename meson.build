@@ -1,6 +1,6 @@
 
 project(
-	'NOP - Processing() Build Test',
+	'NOP - Build Test',
 	'cpp',
 )
 
@@ -9,12 +9,12 @@ cxx = meson.get_compiler('cpp')
 # Sources
 
 srcs = [
-	'ProcessingCore/Processing.cpp',
-	'ProcessingCore/Log.cpp',
-	'ProcessingCore/SystemDebugging.cpp',
-	'ProcessingCore/SystemCommanding.cpp',
-	'ProcessingCore/TcpListening.cpp',
-	'ProcessingCore/TcpTransfering.cpp',
+	'SystemCore/Processing.cpp',
+	'SystemCore/Log.cpp',
+	'SystemCore/SystemDebugging.cpp',
+	'SystemCore/SystemCommanding.cpp',
+	'SystemCore/TcpListening.cpp',
+	'SystemCore/TcpTransfering.cpp',
 	'main/main.cpp',
 	'main/Supervising.cpp',
 ]
@@ -89,7 +89,7 @@ myApp = executable(
 		srcs,
 	],
 	include_directories : include_directories([
-		'./ProcessingCore',
+		'./SystemCore',
 		'./main',
 	]),
 	dependencies : [
